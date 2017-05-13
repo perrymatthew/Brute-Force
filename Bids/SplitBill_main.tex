@@ -1,0 +1,54 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{lmodern}
+\usepackage[usenames,dvipsnames,svgnames,table]{color}
+\usepackage{sectsty}
+
+\sectionfont{\color{cyan}}
+
+\begin{document}
+   \begin{titlepage}
+      {\fontfamily{lmss}\selectfont
+      	\centering
+      	\includegraphics[width=0.30\textwidth]{logo.png}\par\vspace{1cm}
+      	{\LARGE Client Name \par}
+      	\vspace{0.25cm}
+      	{\huge\bfseries \color{cyan}Project Name\par}
+      	\vspace{1cm}
+      	{\Large\textit{by} Brute Force\par}
+         \vspace{0.25cm}
+         \begin{tikzpicture}
+            \node [inner sep=0pt,,outer sep=0pt,clip,rounded corners=0.5cm] (pict) at (0,0) {\includegraphics[width=1\textwidth]{team.jpg}};
+            \node[fit=(pict),rounded corners=.55cm,inner sep=2pt]{};
+         \end{tikzpicture}
+
+         \par\vspace{1cm}
+         \date{}
+         \centering
+         \textbf{Authors:}\\
+         Mia Gerber\\
+         Matthew Perry\\
+         Wanrick Willemse\\
+         Duart Breedt\\
+         Linda Potgieter\\
+      }
+   \end{titlepage}
+   \maketitle
+   \tableofcontents
+   \newpage
+
+   \section{Introduction}
+   I write stuff here
+
+   \section{The Project}
+   I write stuff here
+
+   \section{Development Methodologies}
+   I write stuff here
+
+   \section{Our Team}
+   Team details here:
+   Brute Force is a ragtag team of stalwart friends, off on a whirlwind big city adventure.
+\end{document}
