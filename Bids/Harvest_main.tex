@@ -1,122 +1,64 @@
 
-\documentclass[11pt,pressrelease]{newlfm} % Font size
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{fit}
+\usepackage{lmodern}
+\usepackage{sectsty}
 
-\usepackage{charter} % Use the Charter font for the document text
-
-\PhrContact{Team name} % Uncomment this line to change the 'Contact:' text
-
-\makeletterhead{Uiuc}{\Cheader{\vspace{16pt}\includegraphics[width=0.5\linewidth]{logo.png}}} % Include a company logo, if you don't use one you will need to uncomment line 6 in the prsrls.tex file
-\lthUiuc % Print the company/institution logo
-
-\release{Subtrop Harvest Application} % When the press release may be used
-%
-\namefrom{Brute Force} % Name
-
-
-\headline{Project Tender} % Headline for the press release
-
-\newcommand{\subtitle}{} % Subtitle for the press release, if you don't want one just remove the subtitle text leaving the rest of the command
-
-
-%----------------------------------------------------------------------------------------
+\sectionfont{\color{cyan}}
 
 \begin{document}
-\begin{newlfm}
+   \begin{titlepage}
+      {\fontfamily{lmss}\selectfont
+      	\centering
+      	\includegraphics[width=0.40\textwidth]{logo.png}\par\vspace{1cm}
+      	{\LARGE Subtrop \par}
+      	\vspace{0.25cm}
+      	{\huge\bfseries \color{cyan}Harvest\par}
+      	\vspace{1cm}
+      	{\Large\textit{by} Brute Force\par}
+         \vspace{0.25cm}
+         \begin{tikzpicture}
+            \node [inner sep=0pt,,outer sep=0pt,clip,rounded corners=0.5cm] (pict) at (0,0) {\includegraphics[width=0.9\textwidth]{team.jpg}};
+            \node[fit=(pict),rounded corners=.55cm,inner sep=2pt]{};
+         \end{tikzpicture}
 
-%----------------------------------------------------------------------------------------
-%	PRESS RELEASE CONTENT
-%----------------------------------------------------------------------------------------
+         \par\vspace{1cm}
+         \date{}
+         \author{}
+         \title{}
+         \centering
+         \textbf{Authors:}\\
+         Mia Gerber\\
+         Matthew Perry\\
+         Wanrick Willemse\\
+         Duart Breedt\\
+         Linda Potgieter\\
+      }
+   \end{titlepage}
+   \maketitle
+   \tableofcontents
+   \newpage
+   
+   \section{Project Description}
+The scope of the project includes developing a \textbf{web interface}, \textbf{Android application}, and \textbf{iOS application}.\\\\
+The entire application will be built with the \textbf{Ionic Framework}. This will allow for simple multi-platform development including Android and iOS devices. Furthermore, it will ensure the application’s web interface and mobile application have a uniform interface design.\\\\
+We plan to use \textbf{ngCordova}’s geolocation functionality, which integrates natively with the Ionic Framework, to track users who are using the application. The user location’s will be viewable by farmers through either using the web interface and the \textbf{Google Static Map API} or through the mobile application and the \textbf{Google Maps Android API}. \\\\
+Statistical and analytical data will be visualized with either the \textbf{Chart.js} API or \textbf{Plotly.js} API. This will allow the users to specify what type of graphical representation they would like to use view the gathered data as well as which data to visualize. Furthermore, \textbf{Math.js} will be used to calculate and gather relevant data. 
+A server will need to be set up to save user data and productivity data. The majority of the MEAN stack is the preferred solution. \\\\
+Therefore, \textbf{Node.js} will be used as the server which the mobile application as well as web interface will query. \textbf{Express.js} will be used as the server-side framework. \textbf{Jade.js} might be used as a templating engine. \textbf{Angular.js} will be a data-binding client-side solution. \textbf{MongoDB} will be the database which Node.js will query. MongoDB will be best since the application and web interface is run in a largely JSON and JavaScript environment.\\\\
+We plan to have a dedicated admin user who can update the farm data such as produce types, locations, and location/crop boundaries. This will allow the application to be scaled if, for instance, the farm grows without having to redevelop the application or completely redraw the map. This will ensure robustness and flexibility in a demanding farm environment.\\\\
+The application will be developed with the user in mind, therefore it will have a clear and simple design with easy to understand visual metaphors. We will ensure the interaction is designed in such a way to provide users with an increase in productivity and an experience of ease-of use.   
 
-\begin{singlespace} % Uncomment for single line spacing
-
-\begin{center}
-	\includegraphics[width=0.5\linewidth]{team.jpg}
-\end{center}
-
-\begin{center}
-	\large
-	\textbf{Mia Gerber}
-	\\
-	\textbf{Matthew Perry}
-	\\
-	\textbf{Wanrick Willemse}
-	\\
-	\textbf{Duart Breedt}
-	\\
-	\textbf{Linda Potgieter}
-\end{center}
-\newpage
-
-	\section{Team members (from left to right):}
-	\begin{itemize}
-		\item \textbf{Mia Gerber}
-		\\
-		\textnormal Short personal summary
-		\\
-		\textbf{\small Relevant skills:}
-		\begin{itemize}
-			\item skill 1
-			\item skill 2
-			\item skill 3
-		\end{itemize}
-		
-		
-		\item \textbf{Matthew Perry}
-		\\
-		\textnormal Short personal summary
-		\\
-		\textbf{\small Relevant skills:}
-		\begin{itemize}
-			\item skill 1
-			\item skill 2
-			\item skill 3
-		\end{itemize}
-		
-		\item \textbf{Wanrick Willemse}
-		\\
-		\textnormal Short personal summary
-		
-		\textbf{\small Relevant skills:}
-		\begin{itemize}
-			\item skill 1
-			\item skill 2
-			\item skill 3
-		\end{itemize}
-		
-		
-		\item \textbf{Duart Breedt}
-		\\
-		\textnormal Short personal summary
-		\\
-		\textbf{\small Relevant skills:}
-		\begin{itemize}
-			\item skill 1
-			\item skill 2
-			\item skill 3
-		\end{itemize}
-		
-		
-		\item \textbf{Linda Potgieter}
-		\\
-		\textnormal Short personal summary
-		\\
-		\textbf{\small Relevant skills:}
-		\begin{itemize}
-			\item skill 1
-			\item skill 2
-			\item skill 3
-		\end{itemize}
-		
-		
-	\end{itemize}
-	
+\subsection{Deployment Diagram}
 \begin{center}
 	\includegraphics[width=0.5\linewidth]{deployment.png}
 \end{center}
 
-\newpage
-
-\large \textbf{Interaction between development team and client:}
+\section{Development Methodologies}
+\subsection{Interaction between development team and client}
 
 \textnormal First and foremost, we believe the client to be the expert, we are merely helping to create
 			a system to supplement their already existing domain knowledge. In the case of Subtrop, domain knowledge will consist of typical work hours for farm workers, size of orchards, seasonal influences on crop yields and so forth, which will be acquired during our first meeting if our team is chosen for your project.
@@ -131,7 +73,7 @@
 			to provide the best quality product in the time-frame given we need to first create a checklist of features to be implemented and continually refer back to them to ensure we are not going off scope.
 				
 
-\large \textbf{Interaction between members of development team:}
+\subsection{Interaction between members of development team}
 
 \textnormal We decided on applying a SCRUM methodology in order to structure how teamwork will occur for
 			this project, this is a faster, more intensely iterative approach to controlling workflow.
@@ -143,9 +85,56 @@
 			\\ \\
 			As a team we are going to be adhering to a practice called "pair-programming" which is essentially two or more people working on the same piece of code or feature in order to maximize the chances of bugs being discovered and minimize the time required to get a feature ready for production. 
 			\\ \\ 
-\end{singlespace} % Uncomment for single line spacing
 
-%----------------------------------------------------------------------------------------
+	\newpage
+	\section{Our Team}
+   	Team details here:
+		\subsection{Mia Gerber}
+		Short personal summary\\\\
+		\textbf{\small Relevant skills:}
+		\begin{itemize}
+			\item skill 1
+			\item skill 2
+			\item skill 3
+		\end{itemize}
+		
+		
+		\subsection{Matthew Perry}
+		Short personal summary\\\\
+		\textbf{\small Relevant skills:}
+		\begin{itemize}
+			\item skill 1
+			\item skill 2
+			\item skill 3
+		\end{itemize}
+		
+		\subsection{Wanrick Willemse}
+		Short personal summary\\\\
+		\textbf{\small Relevant skills:}
+		\begin{itemize}
+			\item skill 1
+			\item skill 2
+			\item skill 3
+		\end{itemize}
+		
+	
+		\subsection{Duart Breedt}
+		Short personal summary\\\\
+		\textbf{\small Relevant skills:}
+		\begin{itemize}
+			\item skill 1
+			\item skill 2
+			\item skill 3
+		\end{itemize}
+		
+		
+		\subsection{Linda Potgieter}
+		Short personal summary\\\\
+		\textbf{\small Relevant skills:}
+		\begin{itemize}
+			\item skill 1
+			\item skill 2
+			\item skill 3
+		\end{itemize}
 
-\end{newlfm}
 \end{document}
