@@ -4,7 +4,7 @@
 
 ### Members
 - Duart Breedt (@DuartBreedt)
-- Linda Potgieter (@linda)
+- Linda Potgieter (@LindaPotgieter)
 - Matthew Perry (@perrymatthew)
 - Mia Gerber (@vossca)
 - Wanrick Willemse (@wanrick)
