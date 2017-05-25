@@ -76,6 +76,20 @@ The goal of this document is to define a clear project scope that will be used t
 	\subsection{External Interface Requirements}
 	
 	\subsection{Functional Requirements}
+	
+		\begin{enumerate}
+				\item The system must be able to recognise text on a bill.
+				\item The system must be able to correctly categorise the different "columns" of text into discrete structures that represent different information semantically (e.g. an item of food is not interpreted as a numeric amount)
+				\item The system should consciously check whether it has correctly interpreted the bill and if it did not ask the user either for a higher quality photo or as a last resort give an error message. 
+				\item The system should return all information gleaned from the OCR process as a JSON object of which the structure is known to the component that will be receiving the object.
+			\end{enumerate}
+
+			\begin{enumerate}
+				\item The user interface provides a facility for both taking a photo and sending it to the server.
+				\item The user interface provides a facility for starting a new session which will return a temporary session code which is shared with users who also have the application around the table.
+				\item The user interface which is generated after interpretation of the bill (after the associated JSON object has been received) contains a  facility for choosing items to pay for and generates a running total as the user decides.
+				\item All user that were added to the current session will receive the exact same interface and as such will be able to see which items are still available to be paid for and which are no longer available. (Asynchronous calls to the server will facilitate updating of the user interface)
+			\end{enumerate}
 		
 	\subsection{Performance Requirements}
 	
