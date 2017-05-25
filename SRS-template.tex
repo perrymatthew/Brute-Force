@@ -70,6 +70,8 @@ The goal of this document is to define a clear project scope that will be used t
    		% Use cases could possibly be sensible here
 	\subsection{User Characteristics}   	
    		% actor-system modelling
+		Our application is being marketed as a "utility" and as such we won't be targeting a specific user, we want to appeal to as many people as possible because the type of person who visits a restaurant with friends is almost every person imaginable. With that said we will however assume our users to be literate in mobile technologies. A basic understanding of touch screen gestures and navigation between different screens will be assumed. We are making HCI (Human Computer Interaction) a major focus during development of our GUI and as such the aim is simplicity and usability without losing aesthetic appeal. 		
+		
    	\subsection{Assumptions and Dependencies}
 
    \section{Specific Requirements}
@@ -94,6 +96,12 @@ The goal of this document is to define a clear project scope that will be used t
 	\subsection{Performance Requirements}
 	
 	\subsection{Design Constraints}
+	
+		\begin{itemize}
+			\item Even though we will not be persisting any image data for longer than necessary the size of images being sent to the server is a constraint we will need to be conscious of, possible solutions will be cropping or simply reducing image quality by changing the image to only use black and white or a degree of grayscaling.
+			\item The experience of the development team might influence the degree to which the artificial intelligence portion of this project comes to fruition.
+			\item The possibility of getting the application to still be functional without internet access can become a design constraint later in development.
+		\end{itemize}
 	
 	\subsection{Software System Attributes}
    
