@@ -67,8 +67,8 @@ The goal of this document is to define a clear project scope that will be used t
    		%Matthew
    		The Split Bill application will make use of of the camera on the device. The data modules (WiFi and mobile data) will be used for connection to the server over the internet.
    	\subsection{Software Interfaces}
-		%Matthew
-   		% UML diagrams will go here
+		%Duart
+   		%UML diagrams will go here
    	\subsection{Product Functions}
 		%Wanrick
 		Using the mobile interface, a user will be able to take a photo of a restaurant receipt. The mobile device will position and crop the image to only include the restaurant name, items and amounts listed and the totals. On succesful upload a user session is created. The session ID is returned to the initiating user's mobile device. The mobile app then provides a session ID in text format that can be shared with other users using a QR barcode or NFC.\\
@@ -125,5 +125,5 @@ Set deadlines and milestones area achievable and project can be finished by the 
 		\end{itemize}
 
 	\subsection{Software System Attributes}
-   		%Matthew
+   		The app will be designed for off-line use as well as for when it's connected to the server. Thus the app will always be available to be used. The system will not store any persisted user data at any point so security will not be an issue. Making use of Docker for  deployment of the system, that will ensure that there will be a 99\% uptime. The application will communicate with the server to get data about how to interpret the bill, and send learnt data to the server to keep other users up to date. Communications with other users and their devices will happen via the server, so that the bill may be split across multiple devices.
 \end{document}
