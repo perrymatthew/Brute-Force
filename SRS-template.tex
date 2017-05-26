@@ -45,15 +45,15 @@
    \section{Introduction}
    	\subsection{Purpose}
 		\paragraph{Application for splitting a restaurant bill between friends.}
-		The application will be used as a utility in a social context to decrease the time it takes to work out how much everyone needs to contribute to a shared bill. 
-		
-   	\subsection{Scope}	
+		The application will be used as a utility in a social context to decrease the time it takes to work out how much everyone needs to contribute to a shared bill.
+
+   	\subsection{Scope}
    	This project will essentially be divided into two phases, the first of which focuses heavily on user experience and the second accuracy.
 		\paragraph{Phase One:}
 		A multi-platform mobile application that users can send a photo of a bill to and receive an interactive interface generated from the data contained within that photo that they can then use to work out correct totals.
 		\paragraph{Phase Two:}
-		An artificial intelligence agent that has been trained to recognise text in a photo in a very specific way will be the backend mechanism that can be given any photo and will return a JSON object with the structure of that photo that can be parsed to create the interface in phase one. 
-		
+		An artificial intelligence agent that has been trained to recognise text in a photo in a very specific way will be the backend mechanism that can be given any photo and will return a JSON object with the structure of that photo that can be parsed to create the interface in phase one.
+
    	\subsection{Overview}
 The goal of this document is to define a clear project scope that will be used to contain and guide coming deliverables as well as give clarity as to how our application will function as a system built up out of well-defined components.
 
@@ -69,22 +69,25 @@ The goal of this document is to define a clear project scope that will be used t
    		% UML diagrams will go here
    	\subsection{Product Functions}
 		%Wanrick
+		Using the mobile interface, a user will be able to take a photo of a restaurant receipt. The mobile device will position and crop the image to only include the restaurant name, items and amounts listed and the totals. On succesful upload a user session is created. The session ID is returned to the initiating user's mobile device. The mobile app then provides a session ID in text format that can be shared with other users using a QR barcode or NFC.\\
+		The image is uploaded to a webserver where OCR is used to extract the information on the receipt. The information extracted from the image will be analyzed and an AI will determine the closest matching receipt format. The information from the image along with the determined format will be used to create a JSON object that is returned to all the users connected to the session.\\
+		Each user will be able to set a nickname and avatar colour to identify each user. A user will be able to select items from the receipt that is then regarded as claimed, blocking the item for every other user in the session. As a user claims an item, his total will be updated. Once all the items have been claimed, a user can choose a tip percentage. The user's total contribution will be displayed to the user. 
    		% Use cases could possibly be sensible here
-	\subsection{User Characteristics}   	
+	\subsection{User Characteristics}
    		% actor-system modelling
-		Our application is being marketed as a "utility" and as such we won't be targeting a specific user, we want to appeal to as many people as possible because the type of person who visits a restaurant with friends is almost every person imaginable. With that said we will however assume our users to be literate in mobile technologies. A basic understanding of touch screen gestures and navigation between different screens will be assumed. We are making HCI (Human Computer Interaction) a major focus during development of our GUI and as such the aim is simplicity and usability without losing aesthetic appeal. 		
-		
+		Our application is being marketed as a "utility" and as such we won't be targeting a specific user, we want to appeal to as many people as possible because the type of person who visits a restaurant with friends is almost every person imaginable. With that said we will however assume our users to be literate in mobile technologies. A basic understanding of touch screen gestures and navigation between different screens will be assumed. We are making HCI (Human Computer Interaction) a major focus during development of our GUI and as such the aim is simplicity and usability without losing aesthetic appeal.
+
    	\subsection{Assumptions and Dependencies}
 		%Linda
    \section{Specific Requirements}
 	\subsection{External Interface Requirements}
 		%Matthew
 	\subsection{Functional Requirements}
-	
+
 		\begin{enumerate}
 				\item The system must be able to recognise text on a bill.
 				\item The system must be able to correctly categorise the different "columns" of text into discrete structures that represent different information semantically (e.g. an item of food is not interpreted as a numeric amount)
-				\item The system should consciously check whether it has correctly interpreted the bill and if it did not ask the user either for a higher quality photo or as a last resort give an error message. 
+				\item The system should consciously check whether it has correctly interpreted the bill and if it did not ask the user either for a higher quality photo or as a last resort give an error message.
 				\item The system should return all information gleaned from the OCR process as a JSON object of which the structure is known to the component that will be receiving the object.
 			\end{enumerate}
 
@@ -94,17 +97,17 @@ The goal of this document is to define a clear project scope that will be used t
 				\item The user interface which is generated after interpretation of the bill (after the associated JSON object has been received) contains a  facility for choosing items to pay for and generates a running total as the user decides.
 				\item All user that were added to the current session will receive the exact same interface and as such will be able to see which items are still available to be paid for and which are no longer available. (Asynchronous calls to the server will facilitate updating of the user interface)
 			\end{enumerate}
-		
+
 	\subsection{Performance Requirements}
 		%Linda
 	\subsection{Design Constraints}
-	
+
 		\begin{itemize}
 			\item Even though we will not be persisting any image data for longer than necessary the size of images being sent to the server is a constraint we will need to be conscious of, possible solutions will be cropping or simply reducing image quality by changing the image to only use black and white or a degree of grayscaling.
 			\item The experience of the development team might influence the degree to which the artificial intelligence portion of this project comes to fruition.
 			\item The possibility of getting the application to still be functional without internet access can become a design constraint later in development.
 		\end{itemize}
-	
+
 	\subsection{Software System Attributes}
    		%Matthew
 \end{document}
