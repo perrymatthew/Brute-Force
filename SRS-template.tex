@@ -105,13 +105,12 @@ Set deadlines and milestones area achievable and project can be finished by the 
 				\item The system must be able to correctly categorise the different "columns" of text into discrete structures that represent different information semantically (e.g. an item of food is not interpreted as a numeric amount)
 				\item The system should consciously check whether it has correctly interpreted the bill and if it did not ask the user either for a higher quality photo or as a last resort give an error message.
 				\item The system should return all information gleaned from the OCR process as a JSON object of which the structure is known to the component that will be receiving the object.
-			\end{enumerate}
-
-			\begin{enumerate}
 				\item The user interface provides a facility for both taking a photo and sending it to the server.
 				\item The user interface provides a facility for starting a new session which will return a temporary session code which is shared with users who also have the application around the table.
 				\item The user interface which is generated after interpretation of the bill (after the associated JSON object has been received) contains a  facility for choosing items to pay for and generates a running total as the user decides.
 				\item All user that were added to the current session will receive the exact same interface and as such will be able to see which items are still available to be paid for and which are no longer available. (Asynchronous calls to the server will facilitate updating of the user interface)
+				\item Additionally there must be a facility for users to manually create a bill by entering items and their price into a form. (the final interface will then be created from the information entered here) This will also be used as a fallback if OCR fails.
+				\item Users must be uniquely identified by name so that everyone around the table is able to see who is taking responsibility for which item. When the app is opened initially the user will enter a name and choose a color that will be the background color of their icon during an active session.
 			\end{enumerate}
 
 	\subsection{Performance Requirements}
