@@ -60,6 +60,7 @@ The goal of this document is to define a clear project scope that will be used t
    \section{Overall Description}
    	\subsection{System Interfaces}
    		%Wanrick
+		The Split Bill system has no existing external interfaces. The system will consist of a webbased OCR system that detects and identifies a receipt format. The webbased system interfaces with a user's mobile device.
    	\subsection{User Interfaces}
    		%Mia
    	\subsection{Hardware Interfaces}
@@ -71,7 +72,7 @@ The goal of this document is to define a clear project scope that will be used t
 		%Wanrick
 		Using the mobile interface, a user will be able to take a photo of a restaurant receipt. The mobile device will position and crop the image to only include the restaurant name, items and amounts listed and the totals. On succesful upload a user session is created. The session ID is returned to the initiating user's mobile device. The mobile app then provides a session ID in text format that can be shared with other users using a QR barcode or NFC.\\
 		The image is uploaded to a webserver where OCR is used to extract the information on the receipt. The information extracted from the image will be analyzed and an AI will determine the closest matching receipt format. The information from the image along with the determined format will be used to create a JSON object that is returned to all the users connected to the session.\\
-		Each user will be able to set a nickname and avatar colour to identify each user. A user will be able to select items from the receipt that is then regarded as claimed, blocking the item for every other user in the session. As a user claims an item, his total will be updated. Once all the items have been claimed, a user can choose a tip percentage. The user's total contribution will be displayed to the user. 
+		Each user will be able to set a nickname and avatar colour to identify each user. A user will be able to select items from the receipt that is then regarded as claimed, blocking the item for every other user in the session. As a user claims an item, his total will be updated. Once all the items have been claimed, a user can choose a tip percentage. The user's total contribution will be displayed to the user.
    		% Use cases could possibly be sensible here
 	\subsection{User Characteristics}
    		% actor-system modelling
