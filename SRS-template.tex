@@ -65,7 +65,7 @@ The goal of this document is to define a clear project scope that will be used t
    		%Mia
    	\subsection{Hardware Interfaces}
    		%Matthew
-   		The Split Bill system will make use of the smart phone's camera in order to take a picture of the bill for processing. The WiFi module, or the mobile network module will be used to establish a connection over the internet to the central server. Bluetooth module will be used to establish an offline connection to other devices using the app, to split the bill with them.
+   		The Split Bill application will make use of of the camera on the device. The data modules (WiFi and mobile data) will be used for connection to the server over the internet.
    	\subsection{Software Interfaces}
 		%Matthew
    		% UML diagrams will go here
@@ -91,10 +91,15 @@ Set deadlines and milestones area achievable and project can be finished by the 
    \section{Specific Requirements}
 	\subsection{External Interface Requirements}
 		%Matthew
-		The system will make use of the camera on the smart phone to capture a picture of the bill. This will be the extent of the hardware that the app makes use of, excluding the screen for display and interaction purposes.\\
-		
+		\subsection{Hardware Interface}
+		The Split Bill system will be designed to be run off of a smart phone. The system will make use of the smart phone's camera in order to take a picture of the bill for processing.
+		\subsection{Software Interface}
+		The user will interact with the application through a touch screen interface on the device. 
+		\subsection{Communications Interface}
+		The WiFi module, or the mobile network module will be used to establish a connection over the internet to the central server. Through this server, the user will be able to communicate with other users and split the bill with them.
+		\subsection{User Interface}
+		The user interface will be a full screen application that will be designed following HCI protocols to ensure that the optimal user interface that will serve all the functional requirements.
 	\subsection{Functional Requirements}
-
 		\begin{enumerate}
 				\item The system must be able to recognise text on a bill.
 				\item The system must be able to correctly categorise the different "columns" of text into discrete structures that represent different information semantically (e.g. an item of food is not interpreted as a numeric amount)
