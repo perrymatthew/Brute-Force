@@ -62,13 +62,23 @@ The goal of this document is to define a clear project scope that will be used t
    		
 		The Split Bill system has no existing external interfaces. The system will consist of a webbased OCR system that detects and identifies a receipt format. The webbased system interfaces with a user's mobile device.
    	\subsection{User Interfaces}
-   		
+   		\begin{figure}[H]  
+		  \includegraphics[width=0.9\textwidth]{diagrams/mockups.png}
+		   \vspace{0.1cm}
+		    \caption{Deployement Diagram}
+		    \label{Deployment Diagram}
+		\end{figure}
    	\subsection{Hardware Interfaces}
-   		
+   		\begin{figure}[H]  
+		  \includegraphics[width=0.9\textwidth]{diagrams/deployment.png}
+		   \vspace{0.1cm}
+		    \caption{Deployement Diagram}
+		    \label{Deployment Diagram}
+		\end{figure}
    		The Split Bill application will make use of of the camera on the device. The data modules (WiFi and mobile data) will be used for connection to the server over the internet.
    	\subsection{Software Interfaces}
 		
-		\begin{figure}[H]
+\begin{figure}[H]
 
     \vspace{1cm}
 
@@ -83,8 +93,6 @@ The goal of this document is to define a clear project scope that will be used t
    \vspace{0.1cm}
     \caption{Sequence Diagram}
     \label{Sequence Diagram}
-
-  
 \end{figure}
 		
    	\subsection{Product Functions}
@@ -149,6 +157,12 @@ Set deadlines and milestones area achievable and project can be finished by the 
 				\item Additionally there must be a facility for users to manually create a bill by entering items and their price into a form. (the final interface will then be created from the information entered here) This will also be used as a fallback if OCR fails.
 				\item Users must be uniquely identified by name so that everyone around the table is able to see who is taking responsibility for which item. When the app is opened initially the user will enter a name and choose a color that will be the background color of their icon during an active session.
 			\end{enumerate}
+			\begin{figure}[H]  
+			  \includegraphics[width=0.9\textwidth]{diagrams/use case.png}
+			   \vspace{0.1cm}
+			    \caption{Use Case Diagram}
+			    \label{Use Case Diagram}
+			\end{figure}
 
 	\subsection{Performance Requirements}
 		Since the application is user based, performance is of utmost importance. The application should be very responsive and be able to process user information and requests in an appropriate amount of time to ensure the user has a pleasant experience. Performance requirements will focus on response time, completion time, efficiency and speed up, without compromising on functionality and effectiveness. 
